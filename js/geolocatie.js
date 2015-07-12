@@ -16,7 +16,6 @@ function deviceReady() {
 	
 	directionsDisplay = new google.maps.DirectionsRenderer();
     directionsService = new google.maps.DirectionsService();
-    navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 	
 	var mapOptions = {
     	zoom:14,
@@ -28,7 +27,7 @@ function deviceReady() {
 	alert("In deviceReady() \n current location: " + currentLocation + "\n" + 
 		  "destination: " 	   + school);
 	
-	
+	navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 }// end deviceReady();
 
 function onSuccess(position) {
