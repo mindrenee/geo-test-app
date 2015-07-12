@@ -28,7 +28,7 @@ function deviceReady() {
 	alert("In deviceReady() \n current location: " + currentLocation + "\n" + 
 		  "destination: " 	   + school);
 	
-	calcRoute();
+	
 }// end deviceReady();
 
 function onSuccess(position) {
@@ -45,6 +45,8 @@ function setCurrentPosition(lat, lon) {
 	
 	alert("In set \n current location: " + currentLocation + "\n" + 
 		  "destination: " 	   + school);
+		  
+	calcRoute();
 }
 
 function calcRoute() {
