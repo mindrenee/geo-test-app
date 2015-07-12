@@ -4,6 +4,8 @@ var directionsService;
 var map;
 var school = new google.maps.LatLng(52.384981, 4.905202);
 
+google.maps.event.addDomListener(window, 'load', onLoad);
+
 function onLoad() {
 	document.addEventListener("deviceready", deviceReady, false);
 }
