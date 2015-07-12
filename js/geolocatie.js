@@ -10,7 +10,7 @@ function onLoad() {
 
 function deviceReady() {
 	
-	var options = { enableHighAccuracy: true }
+	var options = { enableHighAccuracy: true };
 	
 	directionsDisplay = new google.maps.DirectionsRenderer();
     directionsService = new google.maps.DirectionsService();
