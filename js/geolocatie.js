@@ -11,7 +11,6 @@ function onLoad() {
 }
 
 function deviceReady() {
-	
 	var options = { enableHighAccuracy: true }
 	
 	directionsDisplay = new google.maps.DirectionsRenderer();
@@ -23,9 +22,6 @@ function deviceReady() {
   	};
   	map = new google.maps.Map(document.getElementById('mapCanvas'), mapOptions);
   	directionsDisplay.setMap(map);
-	
-	alert("In deviceReady() \n current location: " + currentLocation + "\n" + 
-		  "destination: " 	   + school);
 	
 	navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 }// end deviceReady();
@@ -41,17 +37,11 @@ function onError(error) {
 
 function setCurrentPosition(lat, lon) {
 	currentLocation = new google.maps.LatLng(lat, lon);
-	
-	alert("In set \n current location: " + currentLocation + "\n" + 
-		  "destination: " 	   + school);
-		  
+
 	calcRoute();
 }
 
 function calcRoute() {
-	alert("in calcRoute \n current location: " + currentLocation + "\n" + 
-		  "destination: " 	   + school);
-	
   	var start = currentLocation;
   	var end = school;
   	var request = {
@@ -61,7 +51,7 @@ function calcRoute() {
   	};
   	directionsService.route(request, function(response, status) {
     	if (status == google.maps.DirectionsStatus.OK) {
-    		directionsDisplay.setPanel(document.getElementById("mapCanvas"));
+    		//directionsDisplay.setPanel(document.getElementById("mapCanvas"));
       		directionsDisplay.setDirections(response);
     	}
   	});
