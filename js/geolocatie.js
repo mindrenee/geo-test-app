@@ -27,7 +27,9 @@ function deviceReady() {
 }// end deviceReady();
 
 function onSuccess(position) {
-	setCurrentPosition(position.coords.latitude, position.coords.longitude);
+	//setCurrentPosition(position.coords.latitude, position.coords.longitude);
+	currentLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	calcRoute();
 }
 
 function onError(error) {
@@ -37,7 +39,6 @@ function onError(error) {
 
 function setCurrentPosition(lat, lon) {
 	currentLocation = new google.maps.LatLng(lat, lon);
-
 	calcRoute();
 }
 
@@ -51,7 +52,6 @@ function calcRoute() {
   	};
   	directionsService.route(request, function(response, status) {
     	if (status == google.maps.DirectionsStatus.OK) {
-    		//directionsDisplay.setPanel(document.getElementById("mapCanvas"));
       		directionsDisplay.setDirections(response);
     	}
   	});
